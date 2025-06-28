@@ -2,10 +2,16 @@
 
 In most of the games I make, there includes a shop system that works similarly to what I include here. Consists of the client end that deals with UI generation and user inputs, and the server end that deals with verification and response to client input. 
 
+## Setup
+1. Open a ROBLOX Studio project
+2. Import the `.rbxm`, and put the contents of each service-named Folder into its respective category (i.e, all children of the "ServerScriptService" folder should be placed into the `ServerScriptService`)
+3. Delete the placeholder folders that are no longer needed
+4. Clone the UI element in-game to your player's `PlayerGui`, OR you can parent it directly to `StarterGui` to load it immediately upon playing the game (presumably for testing purposes)
+
 ## Gotchas
 - A 'Tools' folder in ReplicatedStorage, that contains `Tool` objects
 - Each `Tool` should have the attribute `Cost`, otherwise the tool will not be displayed as on-sale
-- All .lua files are client-sided, except for `shop_server.lua`
+- All `.lua` files are client-sided, except for `shop_server.lua`
 - There exists an `ObjectValue` called `ToolSelected`. Its value is set whenever the player wants to load the page for that specific item to see more information about it.
 
 ## Features
@@ -23,5 +29,5 @@ In most of the games I make, there includes a shop system that works similarly t
 
 ## Known Issues
 - Not compatible externally from ROBLOX Studio
-- Must use the .rbxm provided, OR make sure the `RemoteEvent`s and `RemoteFunction`s are in place and referenced properly
+- Must use the `.rbxm` provided, otherwise there will be referencing errors
 - Dynamic adjustments to price (if there exists such a feature in your game) does not exist; rather they are fixed in place and set by the developer
