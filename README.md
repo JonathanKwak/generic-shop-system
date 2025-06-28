@@ -2,10 +2,18 @@
 
 In most of the games I make, there includes a shop system that works similarly to what I include here. Consists of the client end that deals with UI generation and user inputs, and the server end that deals with verification and response to client input. 
 
+## Setup gotchas
+- A 'Tools' folder in ReplicatedStorage, that contains `Tool` objects
+- Each `Tool` should have the attribute `Cost`, otherwise the tool will not be displayed as on-sale
+- All .lua files are client-sided, except for `shop_server.lua`
+
 ## Features
 - Generic, requires only minor modification to code to adapt to a game system
 - Secure, malicious clients cannot manipulate prices or get items for free
 - Easy to implement new features, simply state the price in the item's attributes or in a ModuleScript somewhere else
+- Clicking on an item will load its description/stats onto a page, allowing the user to see further into the item
+- Debounce to prevent issues with lag 'overlapping' client inputs
+- Adds tools to the player's backpack but also their StarterGear, which will prevent items from destroying themselves if the player respawns
 
 ## Design
 - Instead of manually creating each item cell to display them on sale, the system gets a list of all on-sale items and procedurally creates the cells
