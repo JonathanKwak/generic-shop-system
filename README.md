@@ -2,7 +2,7 @@
 
 In most of the games I make, there includes a shop system that works similarly to what I include here. Consists of the client end that deals with UI generation and user inputs, and the server end that deals with verification and response to client input. 
 
-## Setup gotchas
+## Gotchas
 - A 'Tools' folder in ReplicatedStorage, that contains `Tool` objects
 - Each `Tool` should have the attribute `Cost`, otherwise the tool will not be displayed as on-sale
 - All .lua files are client-sided, except for `shop_server.lua`
