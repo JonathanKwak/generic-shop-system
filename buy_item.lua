@@ -5,11 +5,11 @@ local ui = script:FindFirstAncestorWhichIsA("ScreenGui")
 local debounce = false
 
 local function onClick()
-  if debounce then
-    return
-  end
+	if debounce then
+		return
+	end
 
-  if ui.ToolSelected.Value == nil then
+  	if ui.ToolSelected.Value == nil then
 		return
 	end
   
@@ -17,7 +17,7 @@ local function onClick()
 	
 	local result = buyRemote:InvokeServer(ui.ToolSelected.Value)
 	if result then
-		_G.Notification(result..".")
+		print(result)
 	end
 	
 	debounce = false
